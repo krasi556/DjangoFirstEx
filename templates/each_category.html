@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ category.title }}</title>
+</head>
+<body>
+<h1>Category: {{ category.title }}</h1>
+<h2>Notes:</h2>
+<ul>
+    {% for note in category.notes.all %}
+    <li>
+        <h2>{{ note.title }}</h2>
+        <h3>{{ note.body }}</h3>
+    </li>
+    {% empty %}
+    <li>No notes</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
