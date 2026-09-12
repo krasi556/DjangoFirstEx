@@ -46,8 +46,10 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 
 PROJECT_APPS = [
-    'notes',
-    'categories'
+    'people',
+    'address',
+    'qualifications'
+
 ]
 
 INSTALLED_APPS = [
