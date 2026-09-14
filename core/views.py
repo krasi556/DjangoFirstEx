@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from people.models import People
 
@@ -13,3 +13,7 @@ def show_homepage(request):
     }
 
     return render(request, 'home_page.html', context)
+
+
+def redirect_to_homepage(request):
+    return redirect('core:homepage')

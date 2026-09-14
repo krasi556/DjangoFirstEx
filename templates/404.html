@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Oops...404</title>
-</head>
-<body>
-    <h1>
-        Seems like this page no longer exists
-    </h1>
-    <a href="{% url 'core:homepage' %}">
-        Get back to homepage
-    </a>
-</body>
-</html>
+{% extends 'base_nav.html' %}
+{% block content %}
+{% block title %}Oops...404{% endblock %}
+<h1>
+    Seems like this page no longer exists
+</h1>
+<a href="{% url 'core:homepage' %}">
+    Get back to homepage
+</a>
+{% endblock %}

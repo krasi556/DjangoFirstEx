@@ -17,11 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from core import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('people.urls')),
-    path('', include('qualifications.urls')),
-    path('', include('address.urls')),
-    path('', include('core.urls'))
+    path('people/', include('people.urls')),
+    path('qqualification/', include('qualifications.urls')),
+    path('adaddress/', include('address.urls')),
+    path('core/', include('core.urls')),
+
+    path('', views.redirect_to_homepage)
 
 ]
