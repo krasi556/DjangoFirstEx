@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wow site</title>
+</head>
+<body style="padding: 0 0 1em 2em;">
+<nav  style="padding: 1em 0 1em 1em">
+    <a style="padding: 2em" href="{% url 'core:homepage' %}">Homepage</a>
+    <a href="{% url 'people:people' %}">Employees</a>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer style="padding-top: 30px"> to add footer</footer>
+
+</body>
+</html>

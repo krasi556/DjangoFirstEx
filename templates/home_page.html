@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to home page</title>
-</head>
-<body>
+{% extends 'base_nav.html' %}
+
+{% block content %}
 <p>The employees we have are:</p>
 <ul>
     {% for employee in context %}
-        <li>
+        <li style="padding-top: 1em">
             <a href="{% url 'people:person_detail' person_id=employee.id name_slug=employee.name|slugify %}">
                 {{ employee.name }}
             </a>
         </li>
     {% empty %}
-        <p>We got no employees</p>
+        <li>We got no employees</li>
     {% endfor %}
 </ul>
-</body>
-</html>
+{% endblock %}
