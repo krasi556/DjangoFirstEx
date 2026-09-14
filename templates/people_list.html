@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>Employees information</h1>
+    <ul>
+        {% for employee in context %}
+        <li>
+        <a href="{% url 'people:person_detail' person_id=employee.id %}">Employee name: {{ employee.name }}</a>
+        <p>Employee Qualifications: </p>
+        <ul>
+            {% for qual in employee.qualifications.all %}
+                <li>
+                {{ qual.university }} ({{ qual.date }}) - ({{ qual.courses }})
+                </li>
+                {% endfor %}
+        </ul>
+        </li>
+        {% endfor %}
+    </ul>
 
 </body>
 </html>

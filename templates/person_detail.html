@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Employee details</h1>
+    <h2>Name: {{ context.name }}</h2>
+    <h3>Age: {{ context.age }}</h3>
+        <h4>Job Description {{ context.job_description }}</h4>
+        <ul>
+            {% for details in context.qualifications.all %}
+            <li>{{ details.university }} ({{ details.date }} / {{ details.courses }})</li>
+            {% empty %}
+            <li>No qualifications</li>
+            {% endfor %}
+        </ul>
+    <a href="{% url 'people:people' %}">Back to all Employees</a>
+</body>
+</html>

@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>This is qualifications tab</h1>
+<ul>
+    {% for qual in context %}
+        <li>
+            <p><strong>Qualification:</strong> {{ qual.university }}</p>
+            <ul>
+                {% for person in qual.people.all %}
+                    <li>{{ person.name }}</li>
+                {% empty %}
+                    <li>None</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% empty %}
+        <li>No qualifications found.</li>
+    {% endfor %}
+</ul>
 </body>
 </html>
