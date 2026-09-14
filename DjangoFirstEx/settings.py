@@ -48,7 +48,8 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 PROJECT_APPS = [
     'people',
     'address',
-    'qualifications'
+    'qualifications',
+    'core'
 
 ]
 
