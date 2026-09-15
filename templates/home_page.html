@@ -1,22 +1,16 @@
 {% extends 'base_nav.html' %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
-<h1 class="section-title">Our employees</h1>
-<div class="list-group">
+<p>The employees we have are:</p>
+<ul>
     {% for employee in context %}
-        <a class="list-group-item list-group-item-action employee-card" href="{% url 'people:person_detail' person_id=employee.id name_slug=employee.name|slugify %}">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <div class="detail-label">Employee</div>
-                    <h5 class="mb-1">{{ employee.name }}</h5>
-                </div>
-                <span class="badge rounded-pill badge-soft">View profile</span>
-            </div>
-        </a>
+        <li style="padding-top: 1em">
+            <a href="{% url 'people:person_detail' person_id=employee.id name_slug=employee.name|slugify %}">
+                {{ employee.name }}
+            </a>
+        </li>
     {% empty %}
-        <div class="alert alert-info mb-0">We got no employees.</div>
+        <li>We got no employees</li>
     {% endfor %}
-</div>
+</ul>
 {% endblock %}
