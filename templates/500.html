@@ -1,5 +1,12 @@
 {% extends 'base_nav.html' %}
+
+{% block title %}Server error{% endblock %}
+
 {% block content %}
-{% block title %} We hit 500 an unexpected problem and could not load the page {% endblock %}
-<a href="{% url 'core:homepage' %}"> Go to homepage</a>
+<div class="text-center py-4">
+    <div class="detail-label">Error 500</div>
+    <h1 class="display-5 fw-bold mb-3">Something went wrong</h1>
+    <p class="text-muted mb-4">We hit an unexpected problem and could not load the page.</p>
+    <a class="btn btn-primary" href="{% url 'core:homepage' %}">Go to homepage</a>
+</div>
 {% endblock %}

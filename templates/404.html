@@ -1,10 +1,12 @@
 {% extends 'base_nav.html' %}
+
+{% block title %}Page not found{% endblock %}
+
 {% block content %}
-{% block title %}Oops...404{% endblock %}
-<h1>
-    Seems like this page no longer exists
-</h1>
-<a href="{% url 'core:homepage' %}">
-    Get back to homepage
-</a>
+<div class="text-center py-4">
+    <div class="detail-label">Error 404</div>
+    <h1 class="display-5 fw-bold mb-3">This page no longer exists</h1>
+    <p class="text-muted mb-4">The page you were looking for may have been moved or removed.</p>
+    <a class="btn btn-primary" href="{% url 'core:homepage' %}">Go back home</a>
+</div>
 {% endblock %}

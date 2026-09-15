@@ -2,16 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            min-height: 100vh;
+            color: #1f2937;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: 1.25rem;
+            box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.08);
+        }
+    </style>
 </head>
 <body>
-    <h1> This is address information</h1>
-    <ul>
-        {% for address in context %}
-        <li>
-            The city is:{{ address.city }}, {{ address.person }}
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="container py-5">
+        <div class="content-card p-4 p-md-5">
+            <h1 class="display-6 fw-bold mb-4">Address information</h1>
+            {% if context %}
+                <div class="list-group">
+                    {% for address in context %}
+                        <div class="list-group-item">
+                            <div class="detail-label">Location</div>
+                            <p class="mb-0">The city is: {{ address.city }}, {{ address.person }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="alert alert-info mb-0">No addresses found.</div>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>
