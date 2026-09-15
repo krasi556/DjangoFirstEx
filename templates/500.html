@@ -1,0 +1,5 @@
+{% extends 'base_nav.html' %}
+{% block content %}
+{% block title %} We hit 500 an unexpected problem and could not load the page {% endblock %}
+<a href="{% url 'core:homepage' %}"> Go to homepage</a>
+{% endblock %}

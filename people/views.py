@@ -22,3 +22,5 @@ def get_people_info(request, person_id, name_slug):
         'context': person
     }
     return render(request, 'person_detail.html', context)
+
+
