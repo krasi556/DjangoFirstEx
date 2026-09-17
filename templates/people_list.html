@@ -9,7 +9,7 @@
     <ul>
         {% for employee in context %}
         <li>
-        <a href="{% url 'people:person_detail' person_id=employee.id name_slug=employee.name|slugify %}">Employee name: {{ employee.name }}</a>
+        <a href="{% url 'people:person_detail' person_id=employee.id %}">Employee name: {{ employee.name }}</a>
         <p>Employee Qualifications: </p>
         <ul>
             {% for qual in employee.qualifications.all %}

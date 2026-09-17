@@ -16,7 +16,7 @@ def employees_info(request):
     return render(request, 'people_list.html', context)
 
 
-def get_people_info(request, person_id, name_slug):
+def get_people_info(request, person_id):
     person = get_object_or_404(People.objects.prefetch_related('qualifications'), pk=person_id)
     context = {
         'context': person

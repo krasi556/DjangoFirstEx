@@ -1,5 +1,6 @@
 from django.core.validators import MinValueValidator
 from django.db import models
+from django.utils.text import slugify
 
 from qualifications.models import Qualifications
 
@@ -20,6 +21,7 @@ class People(models.Model):
         blank=True,
         related_name='people'
     )
+
 
     def __str__(self):
         return self.name

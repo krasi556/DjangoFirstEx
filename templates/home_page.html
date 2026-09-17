@@ -5,7 +5,7 @@
 <ul>
     {% for employee in context %}
         <li style="padding-top: 1em">
-            <a href="{% url 'people:person_detail' person_id=employee.id name_slug=employee.name|slugify %}">
+            <a href="{% url 'people:person_detail' person_id=employee.id %}">
                 {{ employee.name }}
             </a>
         </li>
