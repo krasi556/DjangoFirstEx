@@ -6,22 +6,8 @@
 </head>
 <body>
 <h1>This is qualifications tab for {{ person.name }}</h1>
-<ul>
-    {% for qual in qualifications %}
-    <li>
-        <p>
-            Qualifications: {{ qual.university }}
-        </p>
-        {% empty %}
-        <p>No qualifications</p>
-    </li>
-    {% endfor %}
-</ul>
-{% if qualifications.courses %} - Neeeeds fixing
-<h2>Additional courses:</h2>
- {% else %}
-<h2>No courses</h2>
-{% endif %}
+<h2>Qualifications: {{ qualifications|join:', '|default:'No Qualifications' }}</h2>
+<h3>Courses: {{ courses|join:', '|default:'No courses' }}</h3>
 <a href="{% url 'core:homepage' %}">Back to Homepage</a>
 </body>
 </html>
