@@ -1,0 +1,24 @@
+{% load simple_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is the project tab</title>
+</head>
+<body>
+    Total projects that we currently have:
+    <ul>
+        {% for project in projects %}
+        <li>
+            <p>
+                Project name: {{ project.title  }} -
+                difficulty: {% show_difficulty_in_color project.difficulty %}
+            </p>
+        </li>
+        {% empty %}
+        <p>No current projects</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

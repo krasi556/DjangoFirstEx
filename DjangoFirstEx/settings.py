@@ -47,6 +47,7 @@ PROJECT_APPS = [
     'address',
     'qualifications',
     'core',
+    'project'
 
 ]
 

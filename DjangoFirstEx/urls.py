@@ -26,7 +26,7 @@ urlpatterns = [
     path('qualification/', include('qualifications.urls')),
     path('adaddress/', include('address.urls')),
     path('core/', include('core.urls')),
-
+    path('project/',include('project.urls')),
     path('', views.redirect_to_homepage)
 
 ]
