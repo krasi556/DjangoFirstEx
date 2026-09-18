@@ -21,8 +21,7 @@ class People(models.Model):
         blank=True,
         related_name='people'
     )
-
-
+    
     def __str__(self):
         return self.name
 

@@ -1,3 +1,5 @@
+{% load markdown_extras %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +16,8 @@
         <ul>
             {% for qual in employee.qualifications.all %}
                 <li>
-                {{ qual.university }} ({{ qual.date }}) - ({{ qual.courses }})
+                    <strong>{{ qual.university }} ({{ qual.date }}) </strong>
+                    <div>{{ qual.courses|markdown_to_html }}</div>
                 </li>
                 {% endfor %}
         </ul>
