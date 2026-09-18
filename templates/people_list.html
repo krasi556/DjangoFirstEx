@@ -11,12 +11,12 @@
     <ul>
         {% for employee in context %}
         <li>
-        <a href="{% url 'people:person_detail' person_id=employee.id %}">Employee name: {{ employee.name }}</a>
+        <a href="{% url 'people:person_detail' person_id=employee.id %}">Employee name: {{ employee.name|markdown_to_html }}</a>
         <p>Employee Qualifications: </p>
         <ul>
             {% for qual in employee.qualifications.all %}
                 <li>
-                    <strong>{{ qual.university }} ({{ qual.date }}) </strong>
+                    <div>{{ qual.university }} ({{ qual.date }}) </div>
                     <div>{{ qual.courses|markdown_to_html }}</div>
                 </li>
                 {% endfor %}
